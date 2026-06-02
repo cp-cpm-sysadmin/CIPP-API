@@ -13,6 +13,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install ModuleBuilder
+        shell: pwsh
+        run: Install-Module -Name ModuleBuilder -Force -Scope CurrentUser
+
       - name: Build modules
         shell: pwsh
         run: ./Tools/Build-DevApiModules.ps1
