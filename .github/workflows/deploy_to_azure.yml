@@ -13,9 +13,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install ModuleBuilder
+      - name: Install required modules
         shell: pwsh
-        run: Install-Module -Name ModuleBuilder -Force -Scope CurrentUser
+        run: |
+          Install-Module -Name ModuleBuilder -Force -Scope CurrentUser
+          Install-Module -Name Configuration -Force -Scope CurrentUser
 
       - name: Build modules
         shell: pwsh
